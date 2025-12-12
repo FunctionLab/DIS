@@ -13,7 +13,11 @@
 
 DIS+ is the first disease-specific, AI-informed, and interpretable score for variant pathogenicity. DIS+ provides predictions for genome-wide regulatory variants across more than 100 diseases. DIS+ addresses a central unmet need in precision genomics: moving from disease-agnostic deleteriousness scores to disease-specific pathogenicity. With DIS+, instead of receiving a largely conservation-based assessment of a variant’s generic deleteriousness, researchers obtain a precise, disease-specific pathogenicity score with biochemical feature-level interpretation. 
 
-Methodologically, DIS+ couples ancestry-informed pre-training with disease-ontology-guided fine-tuning in a visible AI framework reflecting the hierarchical relationship among diseases. Uniquely, DIS+ quantifies variant pathogenicity separately for transcriptional and post-transcriptional regulation, capturing disease-specific differences in the molecular mechanisms that drive pathogenesis. DIS+ also offers an interpretation module that computes feature-level attributions across thousands of regulatory features, including transcriptional factors and RNA-binding proteins. This design enables robust performance in data-scarce settings and reveals which regulatory programs drive disease risk. In addition to providing a disease-specific assessment and mechanistic interpretation, DIS+ significantly outperforms widely used, disease-agnostic predictors. More about DIS+ and training of the model are described in the following manuscript. 
+<p align="center">
+  <img height="400" src="image/DIS+_workflow.png">
+</p>
+
+Methodologically, DIS+ couples ancestry-informed pre-training with disease-ontology-guided fine-tuning in a visible AI framework reflecting the hierarchical relationship among diseases (**part a**). Uniquely, DIS+ quantifies variant pathogenicity separately for transcriptional and post-transcriptional regulation, capturing disease-specific differences in the molecular mechanisms that drive pathogenesis. DIS+ also offers an interpretation module that computes feature-level attributions across thousands of regulatory features, including transcriptional factors and RNA-binding proteins (**part a**). This design enables robust performance in data-scarce settings and reveals which regulatory programs drive disease risk. In addition to providing a disease-specific assessment and mechanistic interpretation, DIS+ significantly outperforms widely used, disease-agnostic predictors. More about DIS+ and training of the model are described in the following manuscript. 
 
 ## Setup 
 
@@ -60,7 +64,7 @@ python predict.py \
 Arguments:
 - `--vep_file`: input VEP file path ([example](test/test_seqweaver/ptr_embedding/test_var.vcf_gene_annotated_diffs.h5))
 
-###  
+### Pre-training conditioned on variant ancestry group membership   
 ```bash
 python train.py \ 
 	--mode <'pre-train'> \
@@ -86,7 +90,7 @@ Arguments:
 - `--pt_lr`: learning rate for pre-trained model 
 - `--pt_l2`: L2 regularization factor of loss function for the pre-trained model
 
-### Fine-tuning 
+### Fine-tuning with ontology-guided disease-specific pathogenicity classification
 ```bash
 python train.py \
 	--mode <'fine-tune'> \
@@ -138,8 +142,6 @@ Arguments:
 
 ### Model interpretation
 DIS+ includes a built-in interpretability module to provide mechanistic interpretation of model predictions. The script **`explain.py`** computes per-feature attributions for each variant embedding using **DeepLIFT** or **DeepLIFT-SHAP** (via Captum). These explanations allow users to understand which regulatory features drive disease-specific pathogenicity predictions for both transcriptional and post-transcriptional models.
-
-### Running the Interpretability Module
 ```bash
 python explain.py \
 	--method <variant embedding generation method> \

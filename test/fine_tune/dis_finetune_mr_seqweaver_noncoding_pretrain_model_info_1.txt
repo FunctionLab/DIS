@@ -1,0 +1,7 @@
+Optimal pretrain model: data/dis_pretrain_seqweaver_full/dis_pretrain_seqweaver_full_1_model.pt
+Number of input features: 217
+Number of hidden neurons: 1024,512,256,128
+Number of output features: 8
+Dropout rate: 0.1
+Learning rate: 1e-04
+L2 regularization factor: 1e-08

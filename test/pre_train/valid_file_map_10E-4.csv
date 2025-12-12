@@ -1,0 +1,2 @@
+vep_file	af_file	n_var
+/mnt/home/yhao1/ceph/project/DIS/data/seqweaver_outs/deID.gnomad.genomes.v4.1.sites.chr10.vcf/seqweaver_human/annot.deID.gnomad.genomes.v4.1.sites.chr10_diffs.h5	/mnt/home/yhao1/ceph/project/DIS/data/ALIGNED_af_df_output/replace_zero_10E-4/MOD_ALIGN_AFs_gnomad.genomes.v4.1.sites.chr10_0.001.h5	16644417

@@ -1,0 +1,8 @@
+torch==2.2.2 
+numpy==1.26.4
+pandas==2.2.2
+HTSeq==2.0.9
+docopt==0.6.2
+selene_sdk=0.6.0 
+h5py=3.11.0
+

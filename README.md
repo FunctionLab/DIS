@@ -1,10 +1,15 @@
-# *DIS+: Interpretable Variant Pathogenicity Scores with Disease-specific Resolution*
+<p align="center">
+  <img height="300" src="images/DIS+_logo.png">
+</p>
+
+
+# *DIS+*: Interpretable Variant Pathogenicity Scores with Disease-specific Resolution
 
 **Yun Hao, Tess Marvin, Aviya Litman, Natalie Sauerwald, Christopher Y. Park, Denise G. O’Mahony, Vessela N. Kristensen, Olga G. Troyanskaya**
 
 **Flatiron Institute, Princeton University**
 
-Description of DIS+
+### Description of DIS+
 
 DIS+ is the first disease-specific, AI-informed, and interpretable score for variant pathogenicity. DIS+ provides predictions for genome-wide regulatory variants across more than 100 diseases. DIS+ addresses a central unmet need in precision genomics: moving from disease-agnostic deleteriousness scores to disease-specific pathogenicity. With DIS+, instead of receiving a largely conservation-based assessment of a variant’s generic deleteriousness, researchers obtain a precise, disease-specific pathogenicity score with biochemical feature-level interpretation. 
 
@@ -169,12 +174,10 @@ python explain.py \
 	--baseline <attribution baseline reference>
 ``` 
 ---
-#### Notes
-Large numbers of targets or variants produce large HDF5 files; use `--save_targets` to limit output size.
-
-Feature interpretation works for both transcriptional (Sei) and post-transcriptional (Seqweaver) embeddings.
-
-The explainer loads the same fine-tuned DIS+ model used in prediction.
+Notes:
+- Large numbers of targets or variants produce large HDF5 files; use `--save_targets` to limit output size.
+- Feature interpretation works for both transcriptional (Sei) and post-transcriptional (Seqweaver) embeddings.
+- The explainer loads the same fine-tuned DIS+ model used in prediction.
 
 ## Help
 Please post in the Github issues or e-mail Yun Hao [yhao@flatironinstitute.org](mailto:yhao@flatironinstitute.org) with any questions about the repository, requests for more data, etc.

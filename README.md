@@ -1,5 +1,5 @@
 <p align="center">
-  <img height="300" src="images/DIS+_logo.png">
+  <img height="300" src="image/DIS+_logo.png">
 </p>
 
 

@@ -59,10 +59,12 @@ Alternatively, if the user has the pre-computed variant embedding .h5 (VEP) file
 python predict.py \
 	--vep_file <variant embedding file> \
 	--method <variant embedding generation method> \
-	--out_file <output DIS+ prediction file>
+	--out_name <output DIS+ prediction file>
 ```
 Arguments:
 - `--vep_file`: input VEP file path ([example](test/test_seqweaver/ptr_embedding/test_var.vcf_gene_annotated_diffs.h5))
+
+DIS+ prediction is stored in .h5 file, with each row representing variant and each column representingpredicted disease-specific pathogenicity. The mapping between column index and disease name is given by the [transcriptional regulation mapping file](map/DO_sei_tr_dis_node_to_name.csv) and the [post-transcriptional regulation mapping file](map/DO_ptr_dis_node_to_name.csv). 
 
 ### Pre-training conditioned on variant ancestry group membership   
 ```bash

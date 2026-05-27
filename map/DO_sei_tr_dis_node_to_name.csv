@@ -1,0 +1,104 @@
+,node_id,node_name,disease
+0,0,DOID:4,disease
+1,1,DOID:0014667,disease of metabolism
+2,2,DOID:0080015,physical disorder
+3,3,DOID:14566,disease of cellular proliferation
+4,4,DOID:150,disease of mental health
+5,5,DOID:225,syndrome
+6,6,DOID:630,genetic disease
+7,7,DOID:7,disease of anatomical entity
+8,8,DOID:0050177,monogenic disease
+9,9,DOID:0060037,developmental disorder of mental health
+10,10,DOID:0060118,thoracic disease
+11,11,DOID:0080690,RASopathy
+12,12,DOID:15,reproductive system disease
+13,13,DOID:1287,cardiovascular system disease
+14,14,DOID:162,cancer
+15,15,DOID:16,integumentary system disease
+16,16,DOID:77,gastrointestinal system disease
+17,17,DOID:74,hematopoietic system disease
+18,18,DOID:17,musculoskeletal system disease
+19,19,DOID:18,urinary system disease
+20,20,DOID:2914,immune system disease
+21,21,DOID:28,endocrine system disease
+22,22,DOID:3463,breast disease
+23,23,DOID:655,inherited metabolic disorder
+24,24,DOID:863,nervous system disease
+25,25,DOID:0060340,ciliopathy
+26,26,DOID:0050739,autosomal genetic disease
+27,27,DOID:0050155,sensory system disease
+28,28,DOID:0060038,specific developmental disorder
+29,29,DOID:0050686,organ system cancer
+30,30,DOID:0080000,muscular disease
+31,31,DOID:0060040,pervasive developmental disorder
+32,32,DOID:65,connective tissue disease
+33,33,DOID:612,primary immunodeficiency disease
+34,34,DOID:114,heart disease
+35,35,DOID:1247,blood coagulation disease
+36,36,DOID:178,vascular disease
+37,37,DOID:2277,gonadal disease
+38,38,DOID:2355,anemia
+39,39,DOID:229,female reproductive system disease
+40,40,DOID:331,central nervous system disease
+41,41,DOID:3211,lysosomal storage disease
+42,42,DOID:2978,carbohydrate metabolic disorder
+43,43,DOID:3118,hepatobiliary disease
+44,44,DOID:574,peripheral nervous system disease
+45,45,DOID:557,kidney disease
+46,46,DOID:5295,intestinal disease
+47,47,DOID:37,skin disease
+48,48,DOID:9252,amino acid metabolic disorder
+49,49,DOID:1682,congenital heart disease
+50,50,DOID:0050828,artery disease
+51,51,DOID:193,reproductive organ cancer
+52,52,DOID:3119,gastrointestinal system cancer
+53,53,DOID:3093,nervous system cancer
+54,54,DOID:1612,breast cancer
+55,55,DOID:0050700,cardiomyopathy
+56,56,DOID:0080001,bone disease
+57,57,DOID:0060041,autism spectrum disorder
+58,58,DOID:0050736,autosomal dominant disease
+59,59,DOID:0050737,autosomal recessive disease
+60,60,DOID:1222,cartilage disease
+61,61,DOID:1289,neurodegenerative disease
+62,62,DOID:1100,ovarian disease
+63,63,DOID:1059,intellectual disability
+64,64,DOID:720,normocytic anemia
+65,65,DOID:870,neuropathy
+66,66,DOID:936,brain disease
+67,67,DOID:66,muscle tissue disease
+68,68,DOID:2742,auditory system disease
+69,69,DOID:5614,eye disease
+70,70,DOID:4194,glucose metabolism disease
+71,71,DOID:2975,cystic kidney disease
+72,72,DOID:9799,eye degenerative disease
+73,73,DOID:8712,neurofibromatosis
+74,74,DOID:440,neuromuscular disease
+75,75,DOID:0050439,Usher syndrome
+76,76,DOID:10155,intestinal cancer
+77,77,DOID:120,female reproductive organ cancer
+78,78,DOID:0080006,bone development disease
+79,79,DOID:0060036,intrinsic cardiomyopathy
+80,80,DOID:5679,retinal disease
+81,81,DOID:520,aortic disease
+82,82,DOID:0080322,polycystic kidney disease
+83,83,DOID:1826,epilepsy
+84,84,DOID:423,myopathy
+85,85,DOID:2952,inner ear disease
+86,86,DOID:0111253,neurofibromatosis 1
+87,87,DOID:14323,Marfan syndrome
+88,88,DOID:913,atrophic muscular disease
+89,89,DOID:5672,large intestine cancer
+90,90,DOID:2256,osteochondrodysplasia
+91,91,DOID:2394,ovarian cancer
+92,92,DOID:0050701,electroclinical syndrome
+93,93,DOID:10003,sensorineural hearing loss
+94,94,DOID:8466,retinal degeneration
+95,95,DOID:11984,hypertrophic cardiomyopathy
+96,96,DOID:4448,macular degeneration
+97,97,DOID:0050692,Brody myopathy
+98,98,DOID:9256,colorectal cancer
+99,99,DOID:10584,retinitis pigmentosa
+100,100,DOID:2007,degeneration of macula and posterior pole
+101,101,DOID:9884,muscular dystrophy
+102,102,DOID:10871,age related macular degeneration

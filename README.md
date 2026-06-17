@@ -66,6 +66,10 @@ Arguments:
 
 DIS+ prediction is stored in .h5 file, with each row representing variant and each column representingpredicted disease-specific pathogenicity. The mapping between column index and disease name is given by the [transcriptional regulation mapping file](map/DO_sei_tr_dis_node_to_name.csv) and the [post-transcriptional regulation mapping file](map/DO_ptr_dis_node_to_name.csv). 
 
+### Interpretation of DIS+ prediction of disease-specific variant pathongenicity 
+DIS+ provide a predicted score between 0 and 1 that represent the disease-specific pathogencity probability in each of the two levels that DIS+ can predict: transcriptional regulation (TR-DIS+) and post-transcriptional regulation (PTR-DIS+)  
+
+ 
 ### Pre-training conditioned on variant ancestry group membership   
 ```bash
 python train.py \ 
@@ -182,6 +186,27 @@ Notes:
 - Large numbers of targets or variants produce large HDF5 files; use `--save_targets` to limit output size.
 - Feature interpretation works for both transcriptional (Sei) and post-transcriptional (Seqweaver) embeddings.
 - The explainer loads the same fine-tuned DIS+ model used in prediction.
+
+## Understanding DIS+ predictions
+
+DIS+ provides disease-specific pathogenicity scores ranging from 0 to 1 for two regulatory mechanisms:
+- TR-DIS+: pathogenicity mediated through transcriptional regulation.
+- PTR-DIS+: pathogenicity mediated through post-transcriptional regulation.
+
+### Comparing raw DIS+ scores
+
+If you are interested in a single disease, the raw DIS+ predictions can be used directly for variant prioritization. Higher scores indicate a greater predicted likelihood that the variant contributes to disease risk through the corresponding regulatory mechanism.
+
+### Comparing scores across diseases
+
+Because score distributions vary across diseases, raw DIS+ predictions should not be directly compared between diseases. For cross-disease analyses, we recommend first Z-normalizing DIS+ predictions against a set of nearby neutral variants (e.g., variants from gnomAD or the 1000 Genomes Project within 5 kb of the variants of interest).
+
+### Calibration to pathogenicity likelihood
+
+In the DIS+ manuscript, we calibrated normalized DIS+ predictions against empirical pathogenicity likelihood using gold-standard pathogenic regulatory variants. For both TR-DIS+ and PTR-DIS+, the likelihood ratio (LR) of pathogenicity increases monotonically with the normalized DIS+ predictions, indicating stronger enrichment of pathogenic variants at higher scores. This calibration enables transparent and quantitative interpretation of DIS+ predictions in both research and clinical settings.
+
+As a result, normalized DIS+ predictions can be interpreted using disease-specific likelihood-ratio thresholds. Pre-computed disease-specific likelihood-ratio tables are available [here](calibration/)
+
 
 ## Help
 Please post in the Github issues or e-mail Yun Hao [yhao@flatironinstitute.org](mailto:yhao@flatironinstitute.org) with any questions about the repository, requests for more data, etc.

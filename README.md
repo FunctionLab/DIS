@@ -193,11 +193,11 @@ DIS+ provides disease-specific pathogenicity scores ranging from 0 to 1 for two 
 - TR-DIS+: pathogenicity mediated through transcriptional regulation.
 - PTR-DIS+: pathogenicity mediated through post-transcriptional regulation.
 
-### Comparing raw DIS+ scores
+### Comparing raw DIS+ predictions
 
 If you are interested in a single disease, the raw DIS+ predictions can be used directly for variant prioritization. Higher scores indicate a greater predicted likelihood that the variant contributes to disease risk through the corresponding regulatory mechanism.
 
-### Comparing scores across diseases
+### Comparing DIS+ predictions across diseases
 
 Because score distributions vary across diseases, raw DIS+ predictions should not be directly compared between diseases. For cross-disease analyses, we recommend first Z-normalizing DIS+ predictions against a set of nearby neutral variants (e.g., variants from gnomAD or the 1000 Genomes Project within 5 kb of the variants of interest).
 

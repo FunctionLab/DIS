@@ -199,13 +199,50 @@ If you are interested in a single disease, the raw DIS+ predictions can be used 
 
 ### Comparing DIS+ predictions across diseases
 
-Because score distributions vary across diseases, raw DIS+ predictions should not be directly compared between diseases. For cross-disease analyses, we recommend first Z-normalizing DIS+ predictions against a set of nearby neutral variants (e.g., variants from gnomAD or the 1000 Genomes Project within 5 kb of the variants of interest).
+Because score distributions vary across diseases, raw DIS+ predictions should not be directly compared between diseases. For cross-disease analyses, we recommend first Z-normalizing DIS+ predictions against a set of nearby neutral variants (e.g., variants from gnomAD or the 1000 Genomes Project within 5 kb of the variants of interest). Please refer to the section below for how to normalize DIS+ predictions.
 
 ### Calibration to pathogenicity likelihood
 
 In the DIS+ manuscript, we calibrated normalized DIS+ predictions against empirical pathogenicity likelihood using gold-standard pathogenic regulatory variants. For both TR-DIS+ and PTR-DIS+, the likelihood ratio (LR) of pathogenicity increases monotonically with the normalized DIS+ predictions, indicating stronger enrichment of pathogenic variants at higher scores. This calibration enables transparent and quantitative interpretation of DIS+ predictions in both research and clinical settings.
 
 As a result, normalized DIS+ predictions can be interpreted using disease-specific likelihood-ratio thresholds. Pre-computed disease-specific likelihood-ratio tables are available [here](calibration/)
+
+## Normalizing DIS+ predictions
+
+DIS+ provides a normalization function to enable comparison of disease-specific pathogenicity predictions across different diseases. The script `normalize.py` Z-normalizes DIS+ predictions against a background of neutral variants, using the mean and standard deviation of each disease node. Normalization can be performed using either DIS+ predictions of neutral variants or pre-computed normalization statistics.
+
+Command line ([example bash script](test/normalize/test_normalize.sh)):
+```bash
+python normalize.py \
+    --case_file <DIS+ prediction .h5 file> \
+    --neutral_file <neutral variant prediction .h5 file> \
+    --out_dir <output directory>
+```
+
+Alternatively, if pre-computed neutral normalization statistics are available:
+```bash
+python normalize.py \
+    --case_file <DIS+ prediction .h5 file> \
+    --stats_file <neutral normalization statistics .csv file> \
+    --out_dir <output directory>
+```
+
+Arguments:
+- `--case_file`: Input DIS+ prediction `.h5` file containing variants to be normalized.
+- `--neutral_file`: DIS+ prediction `.h5` file of neutral variants used to compute normalization statistics.
+- `--stats_file`: Pre-computed normalization statistics `.csv` file containing the mean and standard deviation for each disease node. Either `--neutral_file` or `--stats_file` must be provided.
+- `--out_dir`: Directory for output files.
+
+Optional arguments:
+- `--compare`: Perform a one-sided Mann–Whitney U test comparing normalized predictions of input variants against neutral variants across all disease nodes. Outputs a single `.csv` file containing P-values and Benjamini–Hochberg FDR-adjusted P-values.
+- `--plot`: Generate one plot per disease node comparing the mean normalized predictions of input and neutral variants, with 95% confidence intervals.
+
+The `--compare` and `--plot` options require `--neutral_file`, as individual neutral variant predictions are needed for statistical comparison.
+
+Notes:
+- Normalization is performed independently for every disease node using the neutral reference distribution.
+- The neutral reference and input predictions must correspond to the same DIS+ model (`Sei` for TR-DIS+ or `Seqweaver` for PTR-DIS+).
+- We recommend using neutral variants from gnomAD or the 1000 Genomes Project, preferably within 5 kb of the variants of interest. We have provided the pre-computed summary stat of both common and rare gnomAD variants in [this folder](normalize/)
 
 
 ## Help
